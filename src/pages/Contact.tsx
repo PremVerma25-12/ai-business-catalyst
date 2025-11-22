@@ -80,7 +80,7 @@ const Contact = () => {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="john@company.com"
+                        placeholder="premv6264@gmail.com"
                         required
                       />
                     </div>
@@ -107,7 +107,7 @@ const Contact = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="+91 000 000 0000"
                       />
                     </div>
                   </div>
@@ -145,7 +145,7 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">Email</p>
                       <p className="text-muted-foreground text-sm">
-                        info@awsquality.com
+                        prenv6264@gmail.com
                       </p>
                     </div>
                   </div>
@@ -155,7 +155,7 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">Phone</p>
                       <p className="text-muted-foreground text-sm">
-                        +1 (555) 123-4567
+                        +91 7999 840 592
                       </p>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">WhatsApp</p>
                       <p className="text-muted-foreground text-sm">
-                        +1 (555) 123-4567
+                        +91 7999 840 592
                       </p>
                       <Button
                         variant="outline"

@@ -144,9 +144,9 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
-              { name: "Dr. James Anderson", role: "Founder & CEO", description: "15+ years in AI & Machine Learning" },
-              { name: "Maria Santos", role: "CTO", description: "Former AI Lead at Fortune 500" },
-              { name: "David Kim", role: "Head of Solutions", description: "Expert in Business Automation" },
+              { name: "Dr. Prem Verma", role: "Founder & CEO", description: "15+ years in AI & Machine Learning" },
+              { name: "Tanisk Gowshami", role: "CTO", description: "Former AI Lead at Fortune 500" },
+              { name: "Shwet Chouray", role: "Head of Solutions", description: "Expert in Business Automation" },
             ].map((member, index) => (
               <Card key={index}>
                 <CardContent className="pt-8 text-center">

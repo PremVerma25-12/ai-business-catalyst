@@ -76,10 +76,10 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center blur-sm scale-110"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-dark/90" />
+          <div className="absolute inset-0 bg-gradient-dark/95 backdrop-blur-[2px]" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
@@ -115,12 +115,12 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {solutions.map((solution, index) => (
-              <Card key={index} className="hover:shadow-elegant transition-shadow hover:-translate-y-1 transition-transform duration-300">
+              <Card key={index} className="group hover:shadow-glow transition-all hover:-translate-y-2 duration-300 border-2 border-transparent hover:border-primary/20 bg-card/50 backdrop-blur-sm">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
                     <solution.icon className="text-white" size={24} />
                   </div>
-                  <CardTitle className="text-xl">{solution.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{solution.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>{solution.description}</CardDescription>
@@ -149,11 +149,11 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="text-primary" size={32} />
+              <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-glow transition-shadow">
+                  <benefit.icon className="text-white" size={32} />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
@@ -173,7 +173,7 @@ const Home = () => {
 
           <div className="flex flex-wrap justify-center gap-4">
             {industries.map((industry, index) => (
-              <div key={index} className="bg-card border border-border rounded-lg px-6 py-3 hover:shadow-md transition-shadow">
+              <div key={index} className="bg-card/80 backdrop-blur-sm border-2 border-border hover:border-primary/30 rounded-xl px-6 py-3 hover:shadow-elegant transition-all hover:scale-105 hover:bg-primary/5">
                 <span className="font-medium">{industry}</span>
               </div>
             ))}
@@ -193,14 +193,14 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <Card key={index}>
+              <Card key={index} className="hover:shadow-elegant transition-all hover:-translate-y-1 duration-300 border-2 hover:border-primary/20 bg-card/50 backdrop-blur-sm">
                 <CardContent className="pt-6">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="text-yellow-400 fill-current" size={18} />
                     ))}
                   </div>
-                  <p className="text-muted-foreground mb-4">"{testimonial.content}"</p>
+                  <p className="text-muted-foreground mb-4 italic">"{testimonial.content}"</p>
                   <div>
                     <p className="font-semibold">{testimonial.name}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>

@@ -3,7 +3,7 @@ import { Facebook, Twitter, Linkedin, Youtube, Instagram, Mail, Phone } from "lu
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-dark text-white">
+    <footer className="bg-gradient-dark text-white shadow-[0_-10px_30px_-10px_rgba(0,0,0,0.3)]">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}

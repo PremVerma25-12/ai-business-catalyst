@@ -21,7 +21,8 @@ const ChatWidget = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 bg-gradient-primary text-white rounded-full p-4 shadow-glow hover:scale-110 transition-transform z-50"
+          className="fixed bottom-6 right-6 bg-gradient-primary text-white rounded-full p-4 shadow-glow hover:scale-110 hover:rotate-12 transition-all duration-300 z-50 animate-pulse"
+          aria-label="Open chat"
         >
           <MessageCircle size={24} />
         </button>
@@ -29,9 +30,9 @@ const ChatWidget = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-80 h-96 bg-card border border-border rounded-lg shadow-elegant flex flex-col z-50 animate-scale-in">
+        <div className="fixed bottom-6 right-6 w-80 h-96 bg-card/95 backdrop-blur-xl border-2 border-primary/20 rounded-2xl shadow-glow flex flex-col z-50 animate-scale-in">
           {/* Header */}
-          <div className="bg-gradient-primary text-white p-4 rounded-t-lg flex items-center justify-between">
+          <div className="bg-gradient-primary text-white p-4 rounded-t-2xl flex items-center justify-between shadow-lg">
             <div>
               <h3 className="font-semibold">AI Assistant</h3>
               <p className="text-xs opacity-90">We're here to help!</p>

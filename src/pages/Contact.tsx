@@ -5,9 +5,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 const Contact = () => {
   const { toast } = useToast();
+  const heroRef = useScrollAnimation();
+  const formRef = useScrollAnimation();
+  const mapRef = useScrollAnimation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,8 +40,11 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 text-center">
+      <section ref={heroRef.ref} className="py-20 bg-gradient-subtle">
+        <div className={cn(
+          "container mx-auto px-4 text-center transition-all duration-700",
+          heroRef.isVisible ? "opacity-100 animate-slide-down" : "opacity-0"
+        )}>
           <h1 className="text-5xl font-bold mb-6">Get in Touch</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to transform your business with AI? Let's start the conversation.
@@ -45,8 +53,11 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section ref={formRef.ref} className="py-20">
+        <div className={cn(
+          "container mx-auto px-4 transition-all duration-700",
+          formRef.isVisible ? "opacity-100 animate-slide-up" : "opacity-0"
+        )}>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Form */}
             <Card className="lg:col-span-2">
@@ -222,8 +233,11 @@ const Contact = () => {
       </section>
 
       {/* Interactive Map Location */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
+      <section ref={mapRef.ref} className="py-12">
+        <div className={cn(
+          "container mx-auto px-4 transition-all duration-700",
+          mapRef.isVisible ? "opacity-100 animate-slide-up" : "opacity-0"
+        )}>
           <div className="rounded-lg overflow-hidden shadow-glow h-96">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.4547891356684!2d77.5945627!3d23.1815174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4287ffffff5d%3A0x1d44c26b590c94e7!2sBhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890"

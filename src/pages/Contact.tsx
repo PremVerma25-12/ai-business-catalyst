@@ -174,7 +174,7 @@ const Contact = () => {
                         asChild
                       >
                         <a
-                          href="https://wa.me/15551234567"
+                          href="https://wa.me/917999840592"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -221,11 +221,20 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Interactive Map Location */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="bg-gradient-dark rounded-lg h-96 flex items-center justify-center text-white/50">
-            <p>Interactive Map Location</p>
+          <div className="rounded-lg overflow-hidden shadow-glow h-96">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.4547891356684!2d77.5945627!3d23.1815174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4287ffffff5d%3A0x1d44c26b590c94e7!2sBhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Office Location"
+            />
           </div>
         </div>
       </section>
